@@ -1,42 +1,204 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box; /* Ensures padding and borders are included in width/height */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.wholeWrap{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2F3F4;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  font-family: 'Space Mono', monospace;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2F3F4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ================================== Header component ================================== */
+
+.headerWrap{
+  width: 100%;
+  height: 100px;
+  background-color: #E2E0E0;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.card {
-  padding: 2em;
+#logo{
+  height: 60%;
 }
 
-.read-the-docs {
-  color: #888;
+#logo img{
+  height: 100%;
+}
+
+#links{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  height: 100%;
+}
+
+.linksWrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+}
+
+.linksTExt {
+  font-size: 1.2em;
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #707070;
+  position: relative; /* Required for the ::after pseudo-element */
+  text-decoration: none;
+}
+
+.linksTExt:hover {
+  color: #707070;
+}
+
+.linksTExt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #707070;
+  transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.linksTExt:hover::after {
+  width: 100%; /* Expands the border from left to right */
+}
+
+#search{
+  height: 40%;
+  width: 15%;
+  border-radius: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #707070;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  outline: none;
+}
+
+#search::placeholder {
+  color: #ffffff;
+  opacity: 0.7;
+  font-family: 'Space Mono', monospace;
+}
+
+#phone,#messenger,#light{
+  all: unset;
+  cursor: pointer;
+}
+
+.icons{
+  height: 40px;
+}
+
+#propIcons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+}
+
+/* ================================== home page ================================== */
+#home{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+
+#homeText{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 50%;
+}
+
+#homePhoto{
+  display: flex;
+  width: 50%;
+}
+
+#homeBanner{
+  width: 100%;
+}
+
+h1{
+  font-size: 4em;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  line-height: 1;
+}
+
+#yellowCollor{
+  color: #FFD202;
+}
+
+#productsBtn {
+  all: unset;
+  width: 30%;
+  height: 60px;
+  background-color: #FFD202; /* Initial background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  margin-top: 50px;
+  font-size: 1.6em;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative; /* Required for the ::before pseudo-element */
+  overflow: hidden; /* Ensures the hover effect stays within the button */
+  color: #000000; /* Initial font color */
+  z-index: 1; /* Ensures text stays above the hover effect */
+}
+
+#productsBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Black background for hover effect */
+  transition: left 0.4s ease-in-out; /* Smooth transition */
+  z-index: -1; /* Places the background behind the text */
+}
+
+#productsBtn:hover::before {
+  left: 0; /* Moves the black background into view */
+}
+
+#productsBtn:hover {
+  color: #FFD202; /* Changes font color to yellow on hover */
 }

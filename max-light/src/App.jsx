@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Header from './components/Header.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx'; // Import the Home page
+import Products from './pages/Products.jsx'; // Example: Another page
+import Gallery from './pages/Gallery.jsx'; // Example: Another page
+import Contacts from './pages/Contacts.jsx'; // Example: Another page
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Header /> {/* Always visible on every page */}
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Home page */}
+        <Route path="/products" element={<Products />} /> {/* Products page */}
+        <Route path="/gallery" element={<Gallery />} /> {/* Gallery page */}
+        <Route path="/contacts" element={<Contacts />} /> {/* Contacts page */}
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
