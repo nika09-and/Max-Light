@@ -145,7 +145,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   box-sizing: border-box;
-  height: 80%;
+  margin-bottom: 100px;
 }
 
 #homeText{
