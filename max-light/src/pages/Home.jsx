@@ -1,5 +1,7 @@
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import homeBanner from '../assets/home_page/home_banner.png';
+import { useNavigate, Link } from 'react-router-dom'; // Import Link
+
+
 
 export default function Home() {
     const navigate = useNavigate(); // Initialize the navigate function

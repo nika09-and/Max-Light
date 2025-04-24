@@ -32,6 +32,9 @@ body {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  position: sticky;
+  top: 0; /* Sticks the header to the top of the viewport */
+  z-index: 1000;
 }
 
 #logo{
@@ -118,6 +121,14 @@ body {
   height: 40px;
 }
 
+.clickeableArea{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #propIcons{
   display: flex;
   flex-direction: row;
@@ -183,6 +194,10 @@ h1{
   z-index: 1; /* Ensures text stays above the hover effect */
 }
 
+#menu{
+  display: none;
+}
+
 #productsBtn::before {
   content: '';
   position: absolute;
@@ -201,4 +216,337 @@ h1{
 
 #productsBtn:hover {
   color: #FFD202; /* Changes font color to yellow on hover */
+}
+
+#bottomLinks{
+  display: none;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  background-color: #D9D9D9;
+  bottom: 0;
+}
+
+.bottomLinksWrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+/* ================================== products page ================================== */
+
+#products{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+
+#sortWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  border-bottom: #707070 2px solid;
+}
+
+.productsHeader{
+  color: #707070;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+#sortOptions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+
+.sorts{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.sortSecondaryHeader{
+  color: #707070;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.dropdown{
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.priceWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.priceRangeWrap{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 40px;
+}
+
+.sortButton{
+  all: unset;
+  width: 12%;
+  height: 70%;
+  background-color: #FFD202; /* Initial background color */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  font-size: 1.6em;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative; /* Required for the ::before pseudo-element */
+  overflow: hidden; /* Ensures the hover effect stays within the button */;
+  color: #707070;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.arrowIcon{
+  width: 30px;
+  height: 30px;
+}
+
+#view{
+  margin: 0;
+}
+
+.priceInput{
+  width: 50%;
+}
+
+.dropdown,.priceInput{
+  border: none;
+  background-color: #707070;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.priceInput::placeholder{
+  color: #ffffff;
+}
+
+#displayWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65vh;
+  background-color: #000000;
+  margin-top: 30px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: none; /* Smooth slide effect */
+}
+
+.imageContainer.swapping {
+  animation: cardSwap 0.5s ease-in-out; /* Trigger the card swap animation */
+}
+
+.displayImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+#popularProdWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#smallProductsWrap{
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+#popularProducts{
+  margin-top: 10px;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: #D9D9D9;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+
+#popularProducts:hover #smallProdPrice {
+  display: block; /* Show the price when hovering over #smallProductsWrap */
+}
+
+#popularProducts:hover #smallProdName {
+  color: #D9D9D9; /* Show the price when hovering over #smallProductsWrap */
+}
+
+#popularProducts:hover #popularProductsimg{
+  display: none;
+}
+
+#popularProducts:hover{
+  background-color: #707070;
+}
+
+#popularProductsimg{
+  width: 80%;
+  height: auto;
+}
+
+#smallProdPrice{
+  display: none;
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  color: #FFD202;
+}
+
+#smallProdName{
+  
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+  color: #000000;
+}
+
+
+
+
+
+@media (max-width: 1400px){
+  #propIcons{
+    width: 15%;
+  }
+  #links{
+    width: 40%;
+  }
+}
+
+@media (max-width: 1200px){
+  #home{
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+  }
+
+  #homeText{
+    width: 100%;
+  }
+
+  #homePhoto{
+    width: 100%;
+  }
+
+  #homePhoto{
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px){
+  #links{
+    width: 50%;
+  }
+
+  #homePhoto{
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px){
+  #productsBtn{
+    width: 40%;
+  }
+}
+
+@media (max-width: 800px){
+  #propIcons{
+    display: none;
+  }
+
+  #links{
+    display: none;
+  }
+
+  #bottomLinks{
+    display: flex;
+    position: absolute;
+  }
+
+  #homeText{
+    height: 40%;
+  }
+
+  #home{
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  #homePhoto{
+    width: 80%;
+  }
+
+  h1{
+    font-size: 3.5em;
+  }
+
+  #menu{
+    display: flex;
+  }
+}
+
+@media (max-width: 600px){
+  #homePhoto{
+    width: 100%;
+  }
 }

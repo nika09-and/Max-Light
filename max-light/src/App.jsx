@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'; // Import the Home page
 import Products from './pages/Products.jsx'; // Example: Another page
 import Gallery from './pages/Gallery.jsx'; // Example: Another page
 import Contacts from './pages/Contacts.jsx'; // Example: Another page
+import BottomLinks from './components/BottomLinks.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} /> {/* Gallery page */}
         <Route path="/contacts" element={<Contacts />} /> {/* Contacts page */}
       </Routes>
+      <BottomLinks /> {/* Bottom links component */}
     </Router>
   );
 }
