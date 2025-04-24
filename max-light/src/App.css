@@ -536,9 +536,19 @@ h1{
     overflow: hidden;
   }
 
-  #homePhoto{
-    width: 80%;
-  }
+  #homePhoto {
+    height: 30vh;
+    width: auto; /* Let the width adjust automatically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homePhoto img {
+    height: 100%; /* Make the image fill the height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image scales properly */
+}
 
   h1{
     font-size: 3.5em;
