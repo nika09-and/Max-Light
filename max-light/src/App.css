@@ -145,7 +145,6 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   box-sizing: border-box;
-  margin-bottom: 100px;
 }
 
 #homeText{
@@ -538,18 +537,9 @@ h1{
   }
 
   #homePhoto {
-    height: 30vh;
-    width: auto; /* Let the width adjust automatically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
-#homePhoto img {
-    height: 100%; /* Make the image fill the height */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image scales properly */
-}
 
   h1{
     font-size: 3.5em;
@@ -557,11 +547,5 @@ h1{
 
   #menu{
     display: flex;
-  }
-}
-
-@media (max-width: 600px){
-  #homePhoto{
-    width: 100%;
   }
 }
