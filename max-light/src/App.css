@@ -225,6 +225,8 @@ h1{
   height: 100px;
   background-color: #D9D9D9;
   bottom: 0;
+  position: sticky;
+  z-index: 1000;
 }
 
 .bottomLinksWrap{
