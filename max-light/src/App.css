@@ -157,6 +157,7 @@ body {
 #homePhoto{
   display: flex;
   width: 50%;
+  margin-bottom: 100px;
 }
 
 #homeBanner{
@@ -225,7 +226,7 @@ h1{
   height: 100px;
   background-color: #D9D9D9;
   bottom: 0; /* Stick to the bottom of the viewport */
-  position: sticky; /* Behaves like sticky */
+  position: fixed; /* Fix it to the viewport */
   z-index: 1000; /* Ensure it stays above other elements */
   align-items: center;
   justify-content: space-around; /* Space out the child elements */
