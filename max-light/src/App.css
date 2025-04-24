@@ -145,6 +145,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   box-sizing: border-box;
+  height: 80%;
 }
 
 #homeText{
@@ -157,7 +158,6 @@ body {
 #homePhoto{
   display: flex;
   width: 50%;
-  margin-bottom: 100px;
 }
 
 #homeBanner{
