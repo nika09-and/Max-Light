@@ -4,6 +4,7 @@ import display2 from '../assets/products_page/display-2.png';
 import display3 from '../assets/products_page/display-3.png';
 import arrow from '../assets/products_page/arrow icon-02.svg'; // Import your arrow image
 import PopularProducts from '../components/PopularProducts'; // Import your PopularProducts component
+import BigProducts from '../components/BigProducts'; // Import your PopularProducts component
 import homeBanner from '../assets/home_page/home_banner.png';
 
 export default function Products() {
@@ -91,7 +92,23 @@ export default function Products() {
                     <PopularProducts />
                 </div>
             </div>
-            <div id="productsWrap"></div>
+            <div id="productsWrap">
+                <p className="productsHeader">Products</p>
+                <div id="bigProductsWrap">
+                    <BigProducts 
+                        picture={homeBanner}
+                        name="Xenon H11"
+                        price="₾100"
+                        description="Xenon H11 is a high-performance headlight bulb designed for superior visibility and safety on the road. With its advanced technology, it provides a bright, white light that enhances your driving experience."
+                    />
+                    <BigProducts />
+                    <BigProducts />
+                    <BigProducts />
+                    <BigProducts />
+                    <BigProducts />
+                    <BigProducts />
+                </div>
+            </div>
         </div>
     );
 }
