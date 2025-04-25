@@ -536,13 +536,9 @@ h1{
     overflow: hidden;
   }
 
-  #homePhoto {
-    display: none;
-}
-
 
   h1{
-    font-size: 3.5em;
+    font-size: 2em;
   }
 
   #menu{
