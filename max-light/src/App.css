@@ -544,4 +544,8 @@ h1{
   #menu{
     display: flex;
   }
+
+  .headerWrap{
+    height: 70px;
+  }
 }
