@@ -2,7 +2,7 @@ export default function BigProducts({picture, name, price, description}) {
     return(
         <div id="bigProducts">
             <div id="bigProductImage">
-                <img src={picture} alt="Big Product" id="BPI"/>
+                <img src={picture} alt={name} id="BPI"/>
             </div>
 
             <div id="bigProductText">

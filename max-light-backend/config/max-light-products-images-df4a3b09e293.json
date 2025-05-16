@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "max-light-products-images",
+  "private_key_id": "df4a3b09e293ec70840087112769896836311c56",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6B2+Y6uI+mY3d\n5FfYG8ymNg/kTWGTNN/EhSGyXlvkZGiIgp0r9DSBhWn1YK4EDl09QkkMFqtRUK0w\n4vU6mdYGsM0FAO5loo4aCUgJasItmCn1A68vc71NviHCRMAitWIuPPMSRwdB9nV3\nERHTwf6Fa1qlmHvnakfE8OFGvycip3gp/DsyLJKjen02CFxWwP/K8HZHGHCmHue6\nwM9Kus71Bkn9rN9dCaELnpdoKaQzD0CQYhvVIKGUWOCojUDRWpFLXXazYaoQVfzz\no4FRIrMdbkmJUwLQNgkXhbj2OJzprjjcNjgHJqc1wS25dqzGmOXIOvSbNbm7OyKz\nF50WYW2DAgMBAAECggEADLcYZiPb3fqB62JBrNhNlyjH0kuFuVmaV+TfpkDz1/sS\n+A2xb4EsG5RCZ0655jYTIm5G7ugXwqGYjOheaah9LAzmnopvQQwo2Ve8EES3TAWE\nDKa5US2AiXFO/mfTmCu8r7tjw+KN+PC/G6nThZ1TZ8wsMHhpM6qciDYMt9i19JTO\nnfZXBOE42TYJaw/OhPxVZ8ewvYpLoG3KHYOEjPZtMDIe+O0bbjOB2nGtFOZWSXb3\no77ZsJxuhPcJL6G4d2CoNwIFsGRLC287NjEu5vVdYsb4NtQmDaAqeeW930fRKkSF\nYuy0v1HDNbE3NGG/gTLBu7tf7lw27VkZ1JEH6AQHpQKBgQD+qyt2AoV0YrJ6zA0j\nML6pIi4llLKhPt7zTy4ye90iyGgLqa8cg7TOrwsMUbddep6u7pd+qo01EodWxIEs\nqEoed3c995dx20E8IgsHViaLVbcxDEbRywfJWWHtjuWREA6Jl2uZVqyDMHiGJV/J\nJxnh719nruIMxml2uEBptDgzdwKBgQC7AGdjXNgU/6qR95zkzt1tJBTlCwi7rIxN\nuiUyVxUZQ+OG/ZsLRJqgW9w8VOpHaub543wuJ/f4cWKL0wWk0/2VggT8N6lytxRu\nNsF5xbTmMXpnVl2M1+fryXFjRsRgVyQ0dUb+0BvQcUWEbRZ3jpCmRBA7lhvhrEQ3\nnUuWMRohVQKBgQDOc+NKyuZ3oJ+CLzOjSJv4Ly5r5u0dDQPfCVyxLnrp/L9kXQ4J\ntrf4Ki1xsjlNfd9wfxmvZQIOeVPgQnNZyaA0rLKtOK+8bHupDQwVyYB7ymQ1TfeH\nkelhEKXz2LlAbVzrrCZda8d0nvHGBjxtrNYttEmKm1rD8oGC7gHB74j0JwKBgCAz\nSJpGgXrUL3XlEmIf8Ob7QJHUHZPbeWlk9US+1AY+t24mO01sacfVKY5F/PWBRfaf\nomF8RmnEdHipRJ6GVnMpKVyY5Re4yM7VpOkoDydYO8CRkZhQEUJ7tIeoxuXj+3sA\n+tGj2jZBWvwboLPDm8rVi4oHJhPtCu4cqshY+ivlAoGAMrX5SB6nLtzecphXgAGm\nNdvMTFclhrsbRyySaDqiAcb4IMzF0D2BXg3AxeMw943hV+cOrqlnmo0ECtZ5YmtT\ncvzjF1TyMweY+7LUcS2PK3d5Fqf29Ov93C1ukauBGnnlNxduyBdH0WjIX4TRGlBW\nu5BkR37KC1DCFC3/BijlTLM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-test-test@max-light-products-images.iam.gserviceaccount.com",
+  "client_id": "109552021316245393130",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-test-test%40max-light-products-images.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

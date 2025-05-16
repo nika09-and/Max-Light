@@ -1,22 +1,33 @@
 import { useState, useEffect } from 'react';
-import display1 from '../assets/products_page/display-1.png'; // Import your display images
+import display1 from '../assets/products_page/display-1.png';
 import display2 from '../assets/products_page/display-2.png';
 import display3 from '../assets/products_page/display-3.png';
-import arrow from '../assets/products_page/arrow icon-02.svg'; // Import your arrow image
-import PopularProducts from '../components/PopularProducts'; // Import your PopularProducts component
-import BigProducts from '../components/BigProducts'; // Import your PopularProducts component
+import arrow from '../assets/products_page/arrow icon-02.svg';
+import PopularProducts from '../components/PopularProducts';
+import BigProducts from '../components/BigProducts';
 import homeBanner from '../assets/home_page/home_banner.png';
+import { getProducts } from '../services/productService'; // Import our service
 
 export default function Products() {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0); // State to track the current image index
-    const images = [display1, display2, display3]; // Array of images
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [products, setProducts] = useState([]); // Store products here
+    const images = [display1, display2, display3];
+
+    // Fetch products from the backend
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const data = await getProducts();
+            setProducts(data);
+        };
+        fetchProducts();
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Loop through images
-        }, 10000); // Change image every 3 seconds
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 10000);
 
-        return () => clearInterval(interval); // Cleanup interval on component unmount
+        return () => clearInterval(interval);
     }, [images.length]);
 
     return (
@@ -72,7 +83,7 @@ export default function Products() {
 
             <div id="displayWrap">
                 <img
-                    src={images[currentImageIndex]} // Dynamically set the current image
+                    src={images[currentImageIndex]}
                     alt="Display"
                     style={{
                         width: '100%',
@@ -92,21 +103,19 @@ export default function Products() {
                     <PopularProducts />
                 </div>
             </div>
+
             <div id="productsWrap">
                 <p className="productsHeader">Products</p>
                 <div id="bigProductsWrap">
-                    <BigProducts 
-                        picture={homeBanner}
-                        name="Xenon H11"
-                        price="₾100"
-                        description="Xenon H11 is a high-performance headlight bulb designed for superior visibility and safety on the road. With its advanced technology, it provides a bright, white light that enhances your driving experience."
-                    />
-                    <BigProducts />
-                    <BigProducts />
-                    <BigProducts />
-                    <BigProducts />
-                    <BigProducts />
-                    <BigProducts />
+                    {products.map((product) => (
+                        <BigProducts
+                            key={product._id}
+                            picture={product.imageUrl}
+                            name={product.name}
+                            price={`₾${product.price}`}
+                            description={product.description}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
