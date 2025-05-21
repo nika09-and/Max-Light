@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/productModel');
 const multer = require('multer');
-const { uploadFileToGoogleDrive } = require('../services/googleDrive');
+const { uploadFileToImgbb } = require('../services/imgbb');
 
 // 🔹 Configure multer for memory storage (storing in RAM temporarily)
 const storage = multer.memoryStorage();
@@ -51,12 +51,7 @@ router.post('/', async (req, res) => {
             return res.status(400).json({ msg: 'Please provide name and price' });
         }
 
-        // 🔄 Auto-format Google Drive URLs if they are direct links
-        const formattedImageUrl = imageUrl.includes("googleusercontent.com/download?") 
-            ? imageUrl.replace("https://drive.usercontent.google.com/download?", "https://drive.google.com/uc?")
-            : imageUrl;
-
-        const newProduct = new Product({ name, price, description, imageUrl: formattedImageUrl });
+        const newProduct = new Product({ name, price, description, imageUrl });
         await newProduct.save();
         
         console.log(`✅ Product Created: ${name}`);
@@ -105,7 +100,7 @@ router.delete('/:id', async (req, res) => {
 
 /**
  * @route   POST /api/products/upload
- * @desc    Upload image to Google Drive and get URL
+ * @desc    Upload image to imgbb and get URL
  */
 router.post('/upload', upload.single('image'), async (req, res) => {
     try {
@@ -116,22 +111,19 @@ router.post('/upload', upload.single('image'), async (req, res) => {
             return res.status(400).json({ error: 'No file uploaded' });
         }
         
-        console.log("📂 File received. Uploading to Google Drive...");
+        console.log("📂 File received. Uploading to imgbb...");
 
-        const url = await uploadFileToGoogleDrive(req.file);
+        const url = await uploadFileToImgbb(req.file);
 
         if (!url) {
-            console.error("❌ Google Drive upload failed.");
+            console.error("❌ imgbb upload failed.");
             return res.status(500).json({ error: 'Image upload failed.' });
         }
 
         console.log("✅ File uploaded successfully. URL:", url);
 
-        // 🔄 Automatically adjust the URL format
-        const formattedUrl = url.replace("https://drive.usercontent.google.com/download?", "https://drive.google.com/uc?");
-        
-        // ✅ Return the formatted URL
-        res.json({ url: formattedUrl });
+        // ✅ Return the imgbb URL
+        res.json({ url });
 
     } catch (error) {
         console.error('❌ Upload error:', error.message);

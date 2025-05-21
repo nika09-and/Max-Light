@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const productRoutes = require('./routes/productRoutes');
-const { uploadFile } = require('./services/googleDrive'); // Import Google Drive service
+const { uploadFileToImgbb } = require('./services/imgbb'); // Import imgbb service
+console.log('uploadFileToImgbb type:', typeof uploadFileToImgbb); // Debug: Check function import
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -27,19 +28,36 @@ app.get('/test', (req, res) => {
   res.send("Test successful");
 });
 
-// File Upload Middleware (Multer)
-const upload = multer({ dest: 'uploads/' });
+// File Upload Middleware (Multer) - use memory storage for imgbb
+const upload = multer({ storage: multer.memoryStorage() });
 
 // Routes
 app.use('/api/products', productRoutes);
 
 // ➡️ Image Upload Route
 app.post('/api/upload', upload.single('image'), async (req, res) => {
+    // Debug: Log file and API key status
+    console.log('File received:', !!req.file);
+    console.log('IMGBB API Key present:', !!process.env.IMGBB_API_KEY);
+
+    // Check if file is present
+    if (!req.file) {
+        return res.status(400).json({ error: 'No file uploaded.' });
+    }
+    // Check if imgbb API key is present
+    if (!process.env.IMGBB_API_KEY) {
+        return res.status(500).json({ error: 'IMGBB API key not configured.' });
+    }
+    // Check if uploadFileToImgbb is a function
+    if (typeof uploadFileToImgbb !== 'function') {
+        console.error('uploadFileToImgbb is not a function');
+        return res.status(500).json({ error: 'Server misconfiguration: uploadFileToImgbb is not a function.' });
+    }
     try {
-        const imageUrl = await uploadFile(req.file.path); // Upload to Google Drive
+        const imageUrl = await uploadFileToImgbb(req.file); // Upload to imgbb
         res.status(200).json({ imageUrl }); // Respond with the URL
     } catch (error) {
-        console.error('Upload Error:', error.message);
+        console.error('Upload Error:', error.message, error);
         res.status(500).json({ error: 'Image upload failed.' });
     }
 });
