@@ -1,6 +1,9 @@
 import Map from '../components/Map';
 import ContactsText from '../components/ContactsText';
 import phoneIcon from '../assets/home_page/phone_icon.svg';
+import mesangerIcon from '../assets/home_page/mesanger_icon.svg';
+import whatsappIconIcon from '../assets/home_page/whatsappIcon.svg';
+import viberIcon from '../assets/home_page/viberIcon.svg';
 
 export default function Contacts() {
     return (
@@ -15,21 +18,21 @@ export default function Contacts() {
                 />
 
                 <ContactsText
-                    icon={phoneIcon}
+                    icon={viberIcon}
                     header="Viber"
                     description="Contact us on a viber"
                     information="+995 557 778 837"
                 />
 
                 <ContactsText
-                    icon={phoneIcon}
+                    icon={whatsappIconIcon}
                     header="Whatsapp"
                     description="Contact us on a Whatsapp"
                     information="+995 557 778 837"
                 />
 
                 <ContactsText
-                    icon={phoneIcon}
+                    icon={mesangerIcon}
                     header="Messenger"
                     description="Seach us on a Messenger"
                     information="Max-Light Georgia"

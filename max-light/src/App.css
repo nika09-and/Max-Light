@@ -643,6 +643,11 @@ h1{
   font-weight: 700;
 }
 
+#infoIcon{
+  width: 46px;
+  height: 46px;
+}
+
 
 
 @media (max-width: 1400px){
@@ -685,6 +690,18 @@ h1{
   #bigProductsWrap{
     grid-template-columns: repeat(3, 1fr);
   }
+
+  #infoHeader{
+    font-size: 1.1em;
+  }
+
+  #infoDescription{
+    font-size: 0.8em;
+  }
+
+  #infoInformation{
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 1000px){
@@ -707,6 +724,18 @@ h1{
   #displayWrap{
     height: 50vh;
   }
+
+  #infoHeader{
+    font-size: 1.1em;
+  }
+
+  #infoDescription{
+    font-size: 0.8em;
+  }
+
+  #infoInformation{
+    font-size: 1.1em;
+  }
 }
 
 @media (max-width: 900px){
@@ -722,6 +751,22 @@ h1{
   #displayWrap{
     height: 40vh;
   }
+
+  #infoHeader{
+    font-size: 1em;
+  }
+
+  #infoDescription{
+    font-size: 0.7em;
+  }
+
+  #infoInformation{
+    font-size: 1em;
+  }
+
+  #info{
+    width: 30%;
+  }
 }
 
 @media (max-width: 700px){
@@ -731,6 +776,51 @@ h1{
 
   #smallProdName{
     display: none;
+  }
+
+    #infoHeader{
+    font-size: 0.9em;
+  }
+
+  #infoDescription{
+    font-size: 0.6em;
+  }
+
+  #infoInformation{
+    font-size: 0.9em;
+  }
+
+  #contactsText{
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+  }
+
+  #info{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  #infoHeader{
+    /*display: none;*/
+  }
+
+  #infoDescription{
+    display: none;
+  }
+
+  #infoIcon{
+    
+    height: 60%;
+  }
+
+  #info:not(:last-child) {
+    border-right: none;
+    border-bottom: 2px solid #ccc; /* or your desired border style */
   }
 }
 
