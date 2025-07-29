@@ -233,7 +233,7 @@ h1{
   z-index: 1000; /* Ensure it stays above other elements */
   align-items: center;
   justify-content: space-around; /* Space out the child elements */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for appearance */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out , all; /* Smooth transition for appearance */
 }
 
 .bottomLinksWrap{
@@ -242,7 +242,7 @@ h1{
   justify-content: center;
   width: 25%;
   height: 100%;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.3s ease-in-out; /* Smooth transition for background color, height, and border radius */
 }
 
 
@@ -832,7 +832,17 @@ h1{
 }
 
 @media (max-width: 800px){
+
+  .icons{
+    width: 35px;
+    height: 35px;
+  }
   
+  #phone img,#messenger img,#light img{
+    width: 32px;
+    height: auto;
+}
+
   #propIcons{
     display: flex;
   }

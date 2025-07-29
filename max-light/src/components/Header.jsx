@@ -91,7 +91,7 @@ export default function Header() {
                 className={isMobile ? `slide-anim ${menuOpen ? 'slide-in' : 'slide-out'}` : ''}
                 style={{
                     display: !isMobile ? 'flex' : undefined,
-                    width: menuOpen && isMobile ? '70%' : '10%'
+                    width: menuOpen && isMobile ? '60%' : '10%'
                 }}
             >
                 <button id="messenger">
