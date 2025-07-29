@@ -13,8 +13,8 @@ export default function BottomLinks() {
                 className="bottomLinksWrap"
                 style={{
                     backgroundColor: location.pathname === '/' ? '#707070' : 'transparent',
-                    height: location.pathname === '/' ? '130px' : '80px',
-                    borderRadius: location.pathname === '/' ? ' 30px 30px 0 0' : '0',
+                    height: location.pathname === '/' ? '100px' : '80px',
+                    borderRadius: location.pathname === '/' ? ' 20px 20px 0 0' : '0',
                 }}
             >
                 <Link to="/" className="clickeableArea">
@@ -32,8 +32,8 @@ export default function BottomLinks() {
                 className="bottomLinksWrap"
                 style={{
                     backgroundColor: location.pathname === '/products' ? '#707070' : 'transparent',
-                    height: location.pathname === '/products' ? '130px' : '80px',
-                    borderRadius: location.pathname === '/products' ? ' 30px 30px 0 0' : '0',
+                    height: location.pathname === '/products' ? '100px' : '80px',
+                    borderRadius: location.pathname === '/products' ? ' 20px 20px 0 0' : '0',
                 }}
             >
                 <Link to="/products" className="clickeableArea">
@@ -51,8 +51,8 @@ export default function BottomLinks() {
                 className="bottomLinksWrap"
                 style={{
                     backgroundColor: location.pathname === '/gallery' ? '#707070' : 'transparent',
-                    height: location.pathname === '/gallery' ? '130px' : '80px',
-                    borderRadius: location.pathname === '/gallery' ? ' 30px 30px 0 0' : '0',
+                    height: location.pathname === '/gallery' ? '100px' : '80px',
+                    borderRadius: location.pathname === '/gallery' ? ' 20px 20px 0 0' : '0',
                 }}
             >
                 <Link to="/gallery" className="clickeableArea">
@@ -70,8 +70,8 @@ export default function BottomLinks() {
                 className="bottomLinksWrap"
                 style={{
                     backgroundColor: location.pathname === '/contacts' ? '#707070' : 'transparent',
-                    height: location.pathname === '/contacts' ? '130px' : '80px',
-                    borderRadius: location.pathname === '/contacts' ? ' 30px 30px 0 0' : '0',
+                    height: location.pathname === '/contacts' ? '100px' : '80px',
+                    borderRadius: location.pathname === '/contacts' ? ' 20px 20px 0 0' : '0',
                 }}
             >
                 <Link to="/contacts" className="clickeableArea">
