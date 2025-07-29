@@ -45,6 +45,7 @@ body {
   height: 100%;
 }
 
+
 #links{
   display: flex;
   flex-direction: row;
@@ -115,6 +116,8 @@ body {
 #phone,#messenger,#light{
   all: unset;
   cursor: pointer;
+  border:none;
+  background: none;
 }
 
 .icons{
@@ -648,7 +651,11 @@ h1{
   height: 46px;
 }
 
-
+@media (max-width: 3000px){
+  #propIcons{
+    display: flex;
+  }
+}
 
 @media (max-width: 1400px){
   #propIcons{
@@ -825,8 +832,9 @@ h1{
 }
 
 @media (max-width: 800px){
+  
   #propIcons{
-    display: none;
+    display: flex;
   }
 
   #bigProductsWrap{
@@ -899,4 +907,54 @@ h1{
   #sortWrap{
     display: none;
   }
+}
+
+
+/* --- Additions for mobile propIcons slide-in/out effect --- */
+@media (max-width: 800px) {
+  #propIcons {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 70%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    /* Let React inline style control display */
+  }
+  .headerWrap {
+    position: relative;
+    overflow: visible;
+  }
+  #propIcons.slide-anim.slide-in {
+    transform: translateX(-8%) translateY(-50%);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  #propIcons.slide-anim.slide-out {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+}
+
+/* ================================== menu animations ================================== */
+.slide-anim {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform, opacity;
+}
+.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+.slide-out {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
